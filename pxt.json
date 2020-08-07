@@ -1,11 +1,13 @@
 {
     "name": "TuoYuMicroBit",
-    "version": "1.0.0",
-    "description": "This is TuoYu Micro_Bit V1.0.0",
+    "version": "1.0.1",
+    "description": "This is TuoYu Micro_Bit V1.0.1",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "neopixel": "github:lzty634158/pxt-neopixel",
+        "Mbit_IR":  "github:lzty634158/yahboom_mbit_IR"
     },
     "files": [
         "README.md",
