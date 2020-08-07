@@ -1,0 +1,19 @@
+{
+    "name": "TuoYuMicroBit",
+    "version": "1.0.0",
+    "description": "This is TuoYu Micro_Bit V1.0.0",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts",
+        "_locales/zh/string.json"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
