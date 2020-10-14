@@ -1,18 +1,15 @@
 {
-    "name": "TuoYuMicroBit",
-    "version": "1.0.1",
-    "description": "This is TuoYu Micro_Bit V1.0.1",
+    "name": "HuLuMao-MicroBitCar",
+    "version": "1.0.0",
+    "description": "This is HuLuMao Micro_BitCar V1.0.0",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*",
-        "neopixel": "github:lzty634158/pxt-neopixel",
-        "Mbit_IR":  "github:lzty634158/yahboom_mbit_IR"
+        "radio": "*"
     },
     "files": [
         "README.md",
-        "main.ts",
-        "_locales/zh/string.json"
+        "main.ts"
     ],
     "testFiles": [
         "test.ts"
