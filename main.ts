@@ -428,16 +428,16 @@ namespace HuLuMaoCar {
         basic.pause(10);
         switch (index) {
             case FollowSet.left:switch(index1){
-                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P15)==0)temp1=1;else temp1=0;break;    /*检测到黑线返回0*/    
-                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P15)==1)temp1=1;else temp1=0;break;    /*检测到白线返回1*/   
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P15)==1)temp1=1;else temp1=0;break;    /*检测到黑线返回1*/    
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P15)==0)temp1=1;else temp1=0;break;    /*检测到白线返回0*/   
             };break;
             case FollowSet.mid:switch(index1){
-                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P14)==0)temp1=1;else temp1=0;break;
-                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P14)==1)temp1=1;else temp1=0;break;
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P14)==1)temp1=1;else temp1=0;break;
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P14)==0)temp1=1;else temp1=0;break;
             };break;
             case FollowSet.right:switch(index1){
-                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P13)==0)temp1=1;else temp1=0;break;
-                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P13)==1)temp1=1;else temp1=0;break;
+                case FollowColour.black:if(pins.digitalReadPin(DigitalPin.P13)==1)temp1=1;else temp1=0;break;
+                case FollowColour.white:if(pins.digitalReadPin(DigitalPin.P13)==0)temp1=1;else temp1=0;break;
             };break;
         }
         if(temp1==1)
@@ -987,14 +987,14 @@ namespace HuLuMaoCar2{
     }
 
     /**
-     * 选择以打开或关闭小车行驶功能,每个轮子的转速可调，最高160，约等于6级，最低1，约等于1级
+     * 选择以打开或关闭小车行驶功能,每个轮子的转速可调，最高140，约等于6级，最低1，约等于1级
      * @param index
     */
     //% blockId=HuLuMaoCar2_Car_DriveSpeed1 block="控制小车|左轮%index|转速为%index1右轮%index2|转速为%index3"
     //% weight=101
     //% blockGap=10
-    //% index1.min=1 index1.max=160
-    //% index3.min=1 index3.max=160
+    //% index1.min=1 index1.max=140
+    //% index3.min=1 index3.max=140
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed1(index:Drive2,index1:number,index2:Drive2,index3:number):void {
@@ -1070,7 +1070,6 @@ namespace HuLuMaoCar2{
     //% blockId=HuLuMaoCar2_fan block="控制风扇 %speed"
     //% weight=98
     //% blockGap=10
-     //% speed.min=0 speed.max=180
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function fan(index:FengShan):void {
@@ -1082,6 +1081,37 @@ namespace HuLuMaoCar2{
             case FengShan.fan_2:buf=2;break;
         }
         HuLuMaoCar.IICWrite(74,buf);
+     }
+
+     /**
+     * 选择以调用延时函数
+     * @param index
+    */
+    //% blockId=HuLuMaoCar2_My_delayms block="延时(暂停,ms) %speed"
+    //% weight=97
+    //% blockGap=10
+     //% speed.min=0 speed.max=1000
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function My_delayms(speed:number):void {
+        basic.pause(speed);
+     }
+
+     /**
+     * 选择以调用延时函数
+     * @param index
+    */
+    //% blockId=HuLuMaoCar2_My_delays block="延时(暂停,s) %speed"
+    //% weight=96
+    //% blockGap=10
+     //% speed.min=0 speed.max=1000
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function My_delays(speed:number):void {
+        while(speed>0){
+            basic.pause(1000);
+            speed--;
+        }
      }
 }
 //% color="#006400" weight=46 icon="\uf1b9" block="呼噜猫小车与遥控器通信类"
