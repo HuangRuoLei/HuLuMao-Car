@@ -19,7 +19,7 @@ namespace HuLuMaoCar_connection {
     export function con(): void {
         let length;
         for(let i=0;i<20;i++){
-            length=pins.i2cReadNumber(66, NumberFormat.Int8LE);
+            length=pins.i2cReadNumber(66, NumberFormat.UInt8LE);
             if(length==55){
                 basic.showIcon(IconNames.Yes);
                 basic.pause(1000);
@@ -64,7 +64,7 @@ namespace HuLuMaoCar_connection {
             }
             while(data!=2){
                 basic.pause(10);
-                data=pins.i2cReadNumber(75, NumberFormat.Int8LE);
+                data=pins.i2cReadNumber(75, NumberFormat.UInt8LE);
                 basic.showIcon(IconNames.SmallSquare);
             }
             basic.showIcon(IconNames.Square);
@@ -365,7 +365,7 @@ namespace HuLuMaoCar {
     export function Read_Chao_Sheng_Bo(): number {
         let length;
         basic.pause(10);
-        length=pins.i2cReadNumber(65, NumberFormat.Int8LE);
+        length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
     /**
@@ -459,7 +459,7 @@ namespace HuLuMaoCar {
         let temp: boolean = false;
        // let temp1;
         basic.pause(10);
-      //  temp1=pins.i2cReadNumber(72, NumberFormat.Int8LE);
+      //  temp1=pins.i2cReadNumber(72, NumberFormat.UInt8LE);
         if (pins.digitalReadPin(DigitalPin.P3) == 1) {
             temp = true;
         }
@@ -491,7 +491,7 @@ namespace HuLuMaoCar {
         else {
             temp=false;
         }
-     //   temp1=pins.i2cReadNumber(73, NumberFormat.Int8LE);
+     //   temp1=pins.i2cReadNumber(73, NumberFormat.UInt8LE);
      //   if(temp1==1)
      //       temp=true;
      //   else
@@ -517,7 +517,7 @@ namespace HuLuMaoCar {
         else {
             temp=false;
         }
-      //  temp1=pins.i2cReadNumber(74, NumberFormat.Int8LE);
+      //  temp1=pins.i2cReadNumber(74, NumberFormat.UInt8LE);
        // if(temp1==1)
        //     temp=true;
        // else
