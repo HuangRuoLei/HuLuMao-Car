@@ -394,7 +394,7 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Photoresistor(): number {
         let data;
-        data=pins.analogReadPin(AnalogPin.P3);
+        data=pins.analogReadPin(AnalogPin.P2);
        // data=data*3.18/10;
         return Math.round(data);
     }
@@ -409,7 +409,7 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Thermistor(): number {
         let data;
-        data=pins.analogReadPin(AnalogPin.P3);
+        data=pins.analogReadPin(AnalogPin.P2);
       //  data=data*3.18/10;
         return Math.round(data);
     }
