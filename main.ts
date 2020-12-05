@@ -372,7 +372,7 @@ namespace HuLuMaoCar {
      * 调用此将返回火焰传感器测到的火焰数据
      * @param index
     */
-    //% blockId=HuLuMaoCar_Flame block="读取火焰传感器返回的数据"
+    //% blockId=HuLuMaoCar_Flame block="读取火焰传感器返回的数据,数据越小,离火焰越近"
     //% weight=110
     //% blockGap=10
     //% color="#006400"
@@ -380,37 +380,37 @@ namespace HuLuMaoCar {
     export function Flame():number {
         let length;
         basic.pause(10);
-        length = pins.analogReadPin(AnalogPin.P3);
+        length = pins.analogReadPin(AnalogPin.P2);
         return length;
     }
     /**
-     * 调用此将返回光敏电阻返回的亮度值（0代表最暗，333代表最亮）
+     * 调用此将返回光敏电阻返回的亮度值
      * @param index
     */
-    //% blockId=HuLuMaoCar_Photoresistor block="读取光敏电阻测到的亮度(0代表最暗，333代表最亮)"
+    //% blockId=HuLuMaoCar_Photoresistor block="读取光敏电阻测到的亮度，最高亮度值不超过1023"
     //% weight=109
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Photoresistor(): number {
         let data;
-        data=pins.analogReadPin(AnalogPin.P2);
-        data=data*3.18/10;
+        data=pins.analogReadPin(AnalogPin.P3);
+       // data=data*3.18/10;
         return Math.round(data);
     }
     /**
-     * 调用此将返回热敏电阻返回的温度值（0代表最冷，333代表最热）
+     * 调用此将返回热敏电阻返回的温度值
      * @param index
     */
-    //% blockId=HuLuMaoCar_Thermistor block="读取热敏电阻测到的热度(0代表最冷，333代表最热)"
+    //% blockId=HuLuMaoCar_Thermistor block="读取热敏电阻测到的热度，最高热度值不超过1023"
     //% weight=108
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Thermistor(): number {
         let data;
-        data=pins.analogReadPin(AnalogPin.P2);
-        data=data*3.18/10;
+        data=pins.analogReadPin(AnalogPin.P3);
+      //  data=data*3.18/10;
         return Math.round(data);
     }
     /**
@@ -460,16 +460,24 @@ namespace HuLuMaoCar {
        // let temp1;
         basic.pause(10);
       //  temp1=pins.i2cReadNumber(72, NumberFormat.UInt8LE);
+       // if(temp1==1)
+      //      temp=true;
+      //  else
+      //      temp=false;
+
+      /*
         if (pins.digitalReadPin(DigitalPin.P3) == 1) {
             temp = true;
         }
         else {
             temp=false;
+        } */
+        if(input.pinIsPressed(TouchPin.P2)){
+            temp=false;
         }
-       // if(temp1==1)
-      //      temp=true;
-      //  else
-      //      temp=false;
+        else{
+            temp=true;
+        }
         return temp;
     }
     /**
@@ -485,10 +493,17 @@ namespace HuLuMaoCar {
         let temp: boolean = false;
      //   let temp1;
         basic.pause(10);
+        /*
         if (pins.digitalReadPin(DigitalPin.P3) == 0) {
             temp = true;
         }
         else {
+            temp=false;
+        } */
+        if(input.pinIsPressed(TouchPin.P2)){
+            temp=true;
+        }
+        else{
             temp=false;
         }
      //   temp1=pins.i2cReadNumber(73, NumberFormat.UInt8LE);
@@ -511,12 +526,19 @@ namespace HuLuMaoCar {
         let temp: boolean = false;
       //  let temp1;
         basic.pause(10);
+        if(input.pinIsPressed(TouchPin.P2)){
+            temp=true;
+        }
+        else{
+            temp=false;
+        }
+        /*
         if (pins.digitalReadPin(DigitalPin.P3) == 0) {
             temp = true;
         }
         else {
             temp=false;
-        }
+        }*/
       //  temp1=pins.i2cReadNumber(74, NumberFormat.UInt8LE);
        // if(temp1==1)
        //     temp=true;
@@ -537,12 +559,19 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Voice():boolean {
         let temp: boolean = false;
+        if(input.pinIsPressed(TouchPin.P2)){
+            temp=false;
+        }
+        else{
+            temp=true;
+        }
+        /*
         if (pins.digitalReadPin(DigitalPin.P3) == 0) {
             temp = true;
         }
         else {
             temp = false;
-        }
+        }*/
         return temp;
     }
 }
