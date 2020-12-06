@@ -568,7 +568,7 @@ namespace HuLuMaoCar {
         }*/
         let data;
         data=pins.analogReadPin(AnalogPin.P1);
-        if(data>330){
+        if(data>150){
             temp = true;
         }
         else{
