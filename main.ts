@@ -369,7 +369,7 @@ namespace HuLuMaoCar {
         return length;
     }
     /**
-     * 调用此将返回火焰传感器测到的火焰数据
+     * 调用此将返回火焰传感器测到的火焰数据,数据越小,离火焰越近
      * @param index
     */
     //% blockId=HuLuMaoCar_Flame block="读取火焰传感器返回的数据,数据越小,离火焰越近"
@@ -380,7 +380,7 @@ namespace HuLuMaoCar {
     export function Flame():number {
         let length;
         basic.pause(10);
-        length = pins.analogReadPin(AnalogPin.P2);
+        length = pins.analogReadPin(AnalogPin.P1);
         return length;
     }
     /**
@@ -472,7 +472,7 @@ namespace HuLuMaoCar {
         else {
             temp=false;
         } */
-        if(input.pinIsPressed(TouchPin.P2)){
+        if(input.pinIsPressed(TouchPin.P1)){
             temp=false;
         }
         else{
@@ -500,7 +500,7 @@ namespace HuLuMaoCar {
         else {
             temp=false;
         } */
-        if(input.pinIsPressed(TouchPin.P2)){
+        if(input.pinIsPressed(TouchPin.P1)){
             temp=true;
         }
         else{
@@ -526,7 +526,7 @@ namespace HuLuMaoCar {
         let temp: boolean = false;
       //  let temp1;
         basic.pause(10);
-        if(input.pinIsPressed(TouchPin.P2)){
+        if(input.pinIsPressed(TouchPin.P1)){
             temp=true;
         }
         else{
@@ -559,7 +559,7 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Voice():boolean {
         let temp: boolean = false;
-        if(input.pinIsPressed(TouchPin.P2)){
+        if(input.pinIsPressed(TouchPin.P1)){
             temp=false;
         }
         else{
@@ -573,6 +573,21 @@ namespace HuLuMaoCar {
             temp = false;
         }*/
         return temp;
+    }
+    /**
+     * 调用此将返回声音传感器测到的声音数据,数据越小,声音越强
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Voice_data block="读取声音传感器返回的数据,数据越小,声音越强"
+    //% weight=94
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Vioce_data():number {
+        let length;
+        basic.pause(10);
+        length = pins.analogReadPin(AnalogPin.P1);
+        return length;
     }
 }
 
