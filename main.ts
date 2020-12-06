@@ -559,12 +559,21 @@ namespace HuLuMaoCar {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Voice():boolean {
         let temp: boolean = false;
+        /*
         if(input.pinIsPressed(TouchPin.P1)){
             temp=false;
         }
         else{
             temp=true;
+        }*/
+        let data;
+        data=pins.analogReadPin(AnalogPin.P1);
+        if(data>330){
+            temp = true;
         }
+        else{
+            temp=false;
+        } 
         /*
         if (pins.digitalReadPin(DigitalPin.P3) == 0) {
             temp = true;
