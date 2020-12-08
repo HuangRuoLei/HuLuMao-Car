@@ -1209,4 +1209,18 @@ namespace HuLuMaoCar_Remote {
         basic.pause(10);
         pins.i2cWriteNumber(80, 2, NumberFormat.UInt8LE); 
     }
+    /**
+     *
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Remote_Car_Remote_CM1 block="向遥控器发送数字|%index"
+    //% weight=97
+    //% blockGap=10
+    //% index.min=200 index.max=255
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Remote_CM1(index:number):void {
+        basic.pause(10);
+        pins.i2cWriteNumber(82, index, NumberFormat.UInt8LE); 
+    }
 }
