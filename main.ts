@@ -27,6 +27,7 @@ namespace HuLuMaoCar_connection {
             }
         }
         for(let i=0;i<20;i++){
+            basic.pause(10);
             length=pins.i2cReadNumber(66, NumberFormat.UInt8LE);
             if(length==55){
                 basic.showIcon(IconNames.Yes);
