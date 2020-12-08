@@ -18,6 +18,14 @@ namespace HuLuMaoCar_connection {
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function con(): void {
         let length;
+        let length1;
+        for(let i=0;i<2;i++){
+            basic.pause(10);
+            length1=pins.i2cReadNumber(64, NumberFormat.UInt8LE);
+            if(length1==44){
+                break;
+            }
+        }
         for(let i=0;i<20;i++){
             length=pins.i2cReadNumber(66, NumberFormat.UInt8LE);
             if(length==55){
