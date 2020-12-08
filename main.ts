@@ -1232,7 +1232,7 @@ namespace HuLuMaoCar_Remote {
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Car_Remote_CM2():void {
+    export function Car_Remote_CM2():number {
         let length;
         basic.pause(10);
         length=pins.i2cReadNumber(80, NumberFormat.UInt8LE);
