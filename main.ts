@@ -1223,4 +1223,19 @@ namespace HuLuMaoCar_Remote {
         basic.pause(10);
         pins.i2cWriteNumber(82, index, NumberFormat.UInt8LE); 
     }
+    /**
+     *
+     * @param index
+    */
+    //% blockId=HuLuMaoCar_Remote_Car_Remote_CM2 block="接收遥控器发送过来的数字，范围200~255"
+    //% weight=96
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Car_Remote_CM2():void {
+        let length;
+        basic.pause(10);
+        length=pins.i2cReadNumber(80, NumberFormat.UInt8LE);
+        return length; 
+    }
 }
