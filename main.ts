@@ -375,7 +375,7 @@ namespace HuLuMaoCar {
         let length;
         basic.pause(10);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
-        basic.pause(10);
+        basic.pause(100);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
