@@ -375,6 +375,8 @@ namespace HuLuMaoCar {
         let length;
         basic.pause(10);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
+        basic.pause(10);
+        length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
     /**
@@ -1114,7 +1116,7 @@ namespace HuLuMaoCar2{
      * 
      * @param index
     */
-    //% blockId=HuLuMaoCar2_Display_Car_data block="显示车轮的总转数"
+    //% blockId=HuLuMaoCar2_Display_Car_data block="显示车轮的总转数,仅供测试使用,正式程序必须删掉该语句"
     //% weight=99
     //% blockGap=10
     //% color="#006400"
