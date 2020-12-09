@@ -1111,11 +1111,24 @@ namespace HuLuMaoCar2{
         pins.i2cWriteBuffer(79, buf1);
     }
     /**
+     * 
+     * @param index
+    */
+    //% blockId=HuLuMaoCar2_Display_Car_data block="显示车轮的总转数"
+    //% weight=99
+    //% blockGap=10
+    //% color="#006400"
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    export function Display_Car_data():void {
+        basic.pause(10);
+        pins.i2cWriteNumber(67, 1, NumberFormat.UInt8LE); 
+     }
+    /**
      * 选择以打开小车舵机功能,角度可调
      * @param index
     */
     //% blockId=HuLuMaoCar2_Car_Gear block="舵机转动 %speed °"
-    //% weight=99
+    //% weight=98
     //% blockGap=10
      //% speed.min=0 speed.max=180
     //% color="#006400"
@@ -1130,7 +1143,7 @@ namespace HuLuMaoCar2{
      * @param index
     */
     //% blockId=HuLuMaoCar2_fan block="控制风扇 %speed"
-    //% weight=98
+    //% weight=97
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
@@ -1150,7 +1163,7 @@ namespace HuLuMaoCar2{
      * @param index
     */
     //% blockId=HuLuMaoCar2_My_delayms block="延时(暂停,ms) %speed"
-    //% weight=97
+    //% weight=96
     //% blockGap=10
      //% speed.min=0 speed.max=1000
     //% color="#006400"
@@ -1164,7 +1177,7 @@ namespace HuLuMaoCar2{
      * @param index
     */
     //% blockId=HuLuMaoCar2_My_delays block="延时(暂停,s) %speed"
-    //% weight=96
+    //% weight=95
     //% blockGap=10
      //% speed.min=0 speed.max=1000
     //% color="#006400"
