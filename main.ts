@@ -366,16 +366,16 @@ namespace HuLuMaoCar {
      * 调用此将返回超声波的所测到的距离（有效距离2cm~200cm）
      * @param index
     */
-    //% blockId=HuLuMaoCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)|%index"
+    //% blockId=HuLuMaoCar_Read_Chao_Sheng_Bo block="读取超声波测到的距离(cm)"
     //% weight=111
     //% blockGap=10
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
-    export function Read_Chao_Sheng_Bo(index:number): number {
+    export function Read_Chao_Sheng_Bo(): number {
         let length;
         basic.pause(10);
-        length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
-        basic.pause(index);
+        pins.i2cReadNumber(65, NumberFormat.UInt8LE);
+        basic.pause(100);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
         return length;
     }
