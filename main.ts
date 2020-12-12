@@ -836,13 +836,13 @@ namespace HuLuMaoCar1{
         
     }
     /**
-     * 选择以打开小车显示屏显示数字功能,输入的数字不能超过65535
+     * 选择以打开小车显示屏显示数字功能,输入的数字范围-65535~65535
      * @param index
     */
     //% blockId=HuLuMaoCar1_OLEDShowNumber block="显示数字|在第%index2行|第%index3|处|显示%index1"
     //% weight=91
     //% blockGap=10
-    //% index1.min=0 index1.max=65535
+    //% index1.min=-65535 index1.max=65535
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function OLEDShowNumber(index2:HuLuMaoCar.Y,index3:HuLuMaoCar.X,index1:number):void {
