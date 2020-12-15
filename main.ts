@@ -1033,9 +1033,10 @@ namespace HuLuMaoCar2{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed(index:Drive,index1:SpeedRank):void {
-        let buf1 = pins.createBuffer(2);
+        let buf1 = pins.createBuffer(3);
         basic.pause(10);
         buf1[1]=index1;
+        buf1[2]=index1+1;
         switch (index) {
           case Drive.forward:buf1[0]=21;break;
           case Drive.back:buf1[0]=22;break;
@@ -1062,21 +1063,22 @@ namespace HuLuMaoCar2{
     //% color="#006400"
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
     export function Car_DriveSpeed1(index:Drive2,index1:number,index2:Drive2,index3:number):void {
-        let buf1 = pins.createBuffer(4);
+        let buf1 = pins.createBuffer(6);
         basic.pause(10);
         buf1[1]=index1;
+        buf1[4]=index1+1;
         switch (index) {
             case Drive2.forward:buf1[0]=1;break;
             case Drive2.back:buf1[0]=2;break;
             case Drive2.stop:buf1[0]=3;break;
         }
-        buf1[1]=index1;
         switch(index2){
             case Drive2.forward:buf1[2]=1;break;
             case Drive2.back:buf1[2]=2;break;
             case Drive2.stop:buf1[2]=3;break;
         }
         buf1[3]=index3;
+        buf1[5]=index3+1;
         pins.i2cWriteBuffer(81, buf1);
     }
     /**
