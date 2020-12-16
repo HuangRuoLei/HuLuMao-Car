@@ -1040,7 +1040,7 @@ namespace HuLuMaoCar2{
         switch (index) {
           case Drive.forward:buf1[0]=21;break;
           case Drive.back:buf1[0]=22;break;
-          case Drive.stop:buf1[0]=23;break;
+          case Drive.stop:buf1[0]=127;break;   //23
           case Drive.turn_left:buf1[0]=24;break;
           case Drive.turn_right:buf1[0]=25;break;
           case Drive.turn_back_left:buf1[0]=26;break;
