@@ -374,9 +374,10 @@ namespace HuLuMaoCar {
     export function Read_Chao_Sheng_Bo(): number {
         let length;
         basic.pause(10);
-        pins.i2cReadNumber(65, NumberFormat.UInt8LE);
-        basic.pause(100);
+//       pins.i2cReadNumber(65, NumberFormat.UInt8LE);
+//       basic.pause(100);
         length=pins.i2cReadNumber(65, NumberFormat.UInt8LE);
+        basic.pause(100);
         return length;
     }
     /**
